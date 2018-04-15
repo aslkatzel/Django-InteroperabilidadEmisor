@@ -2,10 +2,10 @@
 
 **Caso:** Área de Desarrollo de la Fundación Centro Nacional de Desarrollo e Investigación en Tecnologías Libres
 
-
 **Trabajo Especial de Grado para Optar al Título de Técnico Superior Universitario en la Especialidad de Informática**
 
 **Autor:** Jhonathan Salas Segura
+
 
 ## Software Utilizado
 
@@ -14,7 +14,7 @@
 * Django REST 3.6.3
 * PostgreSQL
 
-## Software Querido 
+## Software Requerido
 
     # apt-get install python-pip python-virtualenv
     

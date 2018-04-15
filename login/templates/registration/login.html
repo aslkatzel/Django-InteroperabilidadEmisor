@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+    Acceso Usuario
+{% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Usuario o contraseña equivocado. Intente de nuevo.</p>
+    {% endif %}
+    <div class="jumbotron" align="center">
+            <img src="/static/img/cenditel.png" width="175px" height="85px"/> 
+            <form class="form" method="post" action="." >
+                {% csrf_token %}
+                <input type="text" class="form-control" placeholder="Usuario" id="inputDefault" name="username"/>
+                <input type="password" class="form-control" placeholder="Contraseña" id="inputDefault" name="password"/>
+                <button type="submit" class="btn btn-secondary" value="Login" id="login-button">
+                    Ingresar
+                </button>
+                <input type="hidden" name="next" value="/index"/>
+            </form>
+    </div>
+    <!-- Código Nuevo -->
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% load staticfiles %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+{% endblock %}
+{% block navbar %}
+<img src="/static/img/cabecera.png" align="center" />
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" align="center">
+          <a class="navbar-brand">
+              <img src="/static/img/cenditel.png" width="100px" height="50px"/>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+  
+              </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <h2>
+                        Inicio
+                      </h2>
+                    </a>
+                  </li>
+                  <li class="nav-item active">
+                    
+                      <h2>
+                        Registros
+                      </h2> 
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    
+                      <h2>
+                        Bitácora
+                      </h2>
+                    </a>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                  <button type="button" class="btn btn-secondary" onclick="window.location.href='/logout/'">
+                      Desconectar
+                  </button>
+              </form>
+          </div>
+    </nav>
+    {% block content %}
+                <div align="center">
+                    <h1> 
+                        Bienvenid@ al sistema, {{ user.nombre }}, {{ user.apellido }} <!-- Colocar Nombre y Apellido -->
+                    </h1>
+                </div>
+    {% endblock %}
+<div class="jumbotron">
+                <div align="justify">
+                    <h1 align="center">
+                        SISTEMA AUTOMATIZADO WEB PARA LA INTEROPERABILIDAD
+                    </h1>
+                    <p>
+                        Tiene como finalidad la constante actualización de los datos referente a todas las actividades llevadas a cabo dentro
+                        de la Fundación, esto con el propósito de agilizar las solicitudes de información mensuales llevadas a cabo por el
+                        MPPEUTC y otros ministerios de los cuales debe rendir cuentas la Fundación CENDITEL.
+                    </p>
+                    <br/>
+                    <h3>
+                      Definición del Marco de Interoperabilidad (MIO) para el Estado venezolano, que se publicó en marzo de 2011.
+                    </h3>
+                    <p>
+                      La interoperabilidad (IO) es la capacidad que tiene el Estado para que sus organismos y demás entes intercambien 
+                      datos entre sí, a través del uso de Tecnologías de Información. Esta interacción implica que las organizaciones 
+                      involucradas compartan información y conocimiento en sus procesos interinstitucionales, mediante el intercambio 
+                      electrónico de datos entre sus plataformas informáticas.
+                    </p>
+                    <p>
+                      La IO es un medio que ofrece al Estado la posibilidad de disminuir los costos y la carga administrativa que demanda 
+                      a las ciudadanas y ciudadanos, facilita el acceso a información actualizada, oportuna y confiable; fomenta la transparencia 
+                      de los procedimientos administrativos, mejora la calidad de los datos públicos y da cumplimiento con lo establecido en la 
+                      Ley Orgánica de la Administración Pública, informando a la población sobre los servicios, procedimientos y organización 
+                      de la Administración Pública.
+                    </p>
+                </div>
+                <!-- Nuevo codigo -->
+
+{% endblock %}

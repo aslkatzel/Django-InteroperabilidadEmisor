@@ -20,9 +20,9 @@
     
     # apt-get install postgresql pgadmin3
 
-### Instalación del Sistema
+## Instalación del Sistema
 
-    $ git clone https://github.com/aslkatzel/Web-Portafolio.git
+    $ git clone https://github.com/aslkatzel/Django-InteroperabilidadEmisor.git
     
     $ virtualenv -p /usr/bin/python3 entorno-emisor
     
@@ -36,7 +36,7 @@
     
     $ python manage.py runserver 8002
 
-### Configuración del Sistema 
+## Configuración del Sistema 
 
 Se debe ir a la opción de **Token de Autenticación**, en donde se debe generar una clave que otorgaremos al sistema receptor para que él pueda procesar nuestros datos.
 

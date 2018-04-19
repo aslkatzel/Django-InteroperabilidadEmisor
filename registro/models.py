@@ -43,21 +43,6 @@ class Proyecto(models.Model):
         return self.cod_pto
 
 
-class Analista(models.Model):
-    cod_inv = models.CharField('Código del Analista', max_length=10, unique=True)
-    inv_ced = models.CharField('Cédula de Identidad', max_length=200, unique=True)
-    inv_nom = models.CharField('Nombres', max_length=200)
-    inv_ape = models.CharField('Apellidos', max_length=200)
-    inv_pro = models.ManyToManyField(Proyecto, help_text="Proyectos")
-    inv_activo = models.BooleanField('¿Se encuentra activo?')
-
-    def get_inv_pro(self):
-        return ", ".join([str(p) for p in self.inv_pro.all()])
-
-    def __str__(self):
-        return self.cod_inv
-
-
 class Libro(models.Model):
     cod_lib = models.CharField('Código Indentificación', max_length=200, unique=True)
     lib_nom = models.CharField('Título del Libro', max_length=200)
@@ -95,3 +80,18 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.cod_even
+
+
+class Investigador(models.Model):
+    cod_in = models.CharField('Código del Investigador', max_length=200) 
+    in_ced = models.CharField('Número de Cédula', max_length=200)
+    in_nom = models.CharField('Nombres', max_length=200) 
+    in_ape = models.CharField('Apellidos', max_length=200) 
+    in_pro = models.ManyToManyField(Proyecto)
+    in_act = models.BooleanField('¿Se encuentra activo?')
+
+    def get_in_pro(self):
+        return ", ".join([str(p) for p in self.in_pro.all()])
+
+    def __str__(self):
+        return self.cod_in

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-	
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from registro.models import Evento, Revista, Curso, Analista, Proyecto, Libro, Participante
+from registro.models import Evento, Revista, Curso, Proyecto, Libro, Participante, Investigador
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -27,11 +27,6 @@ class CursoSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('cod_cur', 'cur_nom', 'cur_date_ini', 'cur_date_fin', 'get_cur_ins')
 
 
-class AnalistaSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = ('cod_inv', 'inv_ced', 'inv_nom', 'inv_ape', 'get_inv_pro', 'inv_activo')
-
-
 class ProyectoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Proyecto
@@ -49,3 +44,8 @@ class ParticipanteSerializer(serializers.HyperlinkedModelSerializer):
         model = Participante
         fields = ('cod_part', 'part_ced', 'part_nom', 'part_ape', 'part_cor') 
 
+
+class InvestigadorSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Investigador
+        fields = ('cod_in', 'in_ced', 'in_nom', 'in_ape', 'get_in_pro', 'in_act')

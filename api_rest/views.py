@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*- 
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-from api_rest.serializers import UserSerializer, EventoSerializer, RevistaSerializer, CursoSerializer, AnalistaSerializer, ProyectoSerializer, LibroSerializer, ParticipanteSerializer
-from registro.models import Evento, Revista, Curso, Analista, Proyecto, Libro, Participante
+from api_rest.serializers import UserSerializer, EventoSerializer, RevistaSerializer, CursoSerializer, ProyectoSerializer, LibroSerializer, ParticipanteSerializer, InvestigadorSerializer
+from registro.models import Evento, Revista, Curso, Proyecto, Libro, Participante, Investigador
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -37,14 +37,6 @@ class CursoViewSet(viewsets.ModelViewSet):
     serializer_class = CursoSerializer
 
 
-class AnalistaViewSet(viewsets.ModelViewSet):
-    """
-    Final de la API que permite que los analistas se vean o editen.
-    """
-    queryset = Analista.objects.all()
-    serializer_class = AnalistaSerializer
-
-
 class ProyectoViewSet(viewsets.ModelViewSet):
     """
     Final de la API que permite que los proyectos se vean o editen.
@@ -68,3 +60,7 @@ class ParticipanteViewSet(viewsets.ModelViewSet):
     queryset = Participante.objects.all()
     serializer_class = ParticipanteSerializer
 
+
+class InvestigadorViewSet(viewsets.ModelViewSet):
+    queryset = Investigador.objects.all()
+    serializer_class = InvestigadorSerializer

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from registro.models import Revista, Libro, Analista, Proyecto, Curso, Participante, Evento
+from registro.models import Revista, Libro, Proyecto, Curso, Participante, Evento, Investigador
 
 class ParticipanteAdmin(admin.ModelAdmin):
 	model = Participante
@@ -18,10 +18,6 @@ class LibroAdmin(admin.ModelAdmin):
 	model = Libro
 	list_display = ['cod_lib', 'lib_nom', 'lib_date', 'lib_cenditel', 'lib_url']
 
-class AnalistaAdmin(admin.ModelAdmin):
-	model = Analista
-	list_display = ['cod_inv', 'inv_ced', 'inv_nom', 'inv_ape', 'get_inv_pro', 'inv_activo']
-
 class ProyectoAdmin(admin.ModelAdmin):
 	model = Proyecto
 	list_display = ['cod_pto', 'pto_nom', 'pto_date_ini', 'pto_date_fin', 'pto_poa']
@@ -30,11 +26,15 @@ class EventoAdmin(admin.ModelAdmin):
 	model = Evento
 	list_display = ['cod_even', 'even_nom', 'even_date_ini', 'even_date_fin', 'even_site', 'get_even_part', 'even_url']
 
+class InvestigadorAdmin(admin.ModelAdmin):
+	model = Investigador
+	list_display = ['cod_in', 'in_ced', 'in_nom', 'in_ape', 'get_in_pro', 'in_act']
+
 admin.site.register(Revista, RevistaAdmin)
 admin.site.register(Libro, LibroAdmin)
-admin.site.register(Analista, AnalistaAdmin)
 admin.site.register(Proyecto, ProyectoAdmin)
 admin.site.register(Curso, CursoAdmin)
 admin.site.register(Participante, ParticipanteAdmin)
 admin.site.register(Evento, EventoAdmin)
+admin.site.register(Investigador, InvestigadorAdmin)
 

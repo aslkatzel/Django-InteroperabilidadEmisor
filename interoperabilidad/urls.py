@@ -25,10 +25,10 @@ router.register(r'users', views.UserViewSet)
 router.register(r'eventos', views.EventoViewSet)
 router.register(r'revistas', views.RevistaViewSet)
 router.register(r'cursos', views.CursoViewSet)
-router.register(r'analistas', views.AnalistaViewSet)
 router.register(r'proyectos', views.ProyectoViewSet)
 router.register(r'libros', views.LibroViewSet)
 router.register(r'participantes', views.ParticipanteViewSet)
+router.register(r'investigadores', views.InvestigadorViewSet)
 
 urlpatterns = [
     # URL Administrator

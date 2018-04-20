@@ -48,7 +48,7 @@ class Libro(models.Model):
     lib_nom = models.CharField('Título del Libro', max_length=200)
     lib_date = models.DateField('Fecha de Publicación', auto_now=False, auto_now_add=False, null=True, blank=True)
     lib_cenditel = models.BooleanField('¿Realizado en CENDITEL?')
-    lib_url = models.CharField('URL Visualización', max_length=200, null=True, blank=True)
+    lib_url = models.URLField('Página Web', max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.cod_lib
@@ -60,7 +60,7 @@ class Revista(models.Model):
     rev_date = models.DateField('Fecha de Publicación', auto_now=False, auto_now_add=False, null=True, blank=True)
     rev_arb = models.BooleanField('¿Revista Arbitrada?')
     rev_cenditel = models.BooleanField('¿Realizado en CENDITEL?')
-    rev_url = models.CharField('URL Visualización', max_length=200, null=True, blank=True)
+    rev_url = models.URLField('Página Web', null=True, blank=True)
 
     def __str__(self):
         return self.rev_num
@@ -71,9 +71,9 @@ class Evento(models.Model):
     even_nom = models.CharField('Nombre del Evento', max_length=200) 
     even_date_ini = models.DateField('Fecha de Inicio', auto_now=False, auto_now_add=False, null=True, blank=True)
     even_date_fin = models.DateField('Fecha de Finalización', auto_now=False, auto_now_add=False, null=True, blank=True)
-    even_site = models.TextField('Lugar del EVento', max_length=500, null=True, blank=True)
+    even_site = models.TextField('Lugar del Evento', max_length=500, null=True, blank=True)
     even_part = models.ManyToManyField(Participante)
-    even_url = models.URLField(null=True, blank=True)
+    even_url = models.URLField('Página Web', null=True, blank=True)
 
     def get_even_part(self):
         return ", ".join([str(p) for p in self.even_part.all()])

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'registro',
     'rest_framework',
     'api_rest',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 ]
 
 # Rest Framework block

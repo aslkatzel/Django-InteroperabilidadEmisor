@@ -6,34 +6,38 @@
 
 **Autor:** Jhonathan Salas Segura
 
-
 ## Software Utilizado
 
 * Python 3.5.3
 * Django 1.9.5
 * Django REST 3.6.3
-* PostgreSQL
 
 ## Software Requerido
 
+### GNU/Linux
+
     # apt-get install python-pip python-virtualenv
-    
-    # apt-get install postgresql pgadmin3
 
 ## Instalación del Sistema
 
-    $ git clone https://github.com/aslkatzel/Django-InteroperabilidadEmisor.git
-    
+### Windows
+
+	> git clone https://github.com/aslkatzel/django-sistema-emisor.git
+	> virtualenv entorno-emisor
+	> pip install -r requirements/base.txt
+	> python manage.py makemigrations registro
+    > python manage.py migrate
+    > python manage.py createsuperuser
+    > python manage.py runserver 8002
+
+### GNU/Linux
+
+    $ git clone https://github.com/aslkatzel/django-sistema-emisor.git
     $ virtualenv -p /usr/bin/python3 entorno-emisor
-    
     $ pip install -r requirements/base.txt
-    
     $ python manage.py makemigrations registro
-    
     $ python manage.py migrate
-    
     $ python manage.py createsuperuser
-    
     $ python manage.py runserver 8002
 
 ## Configuración del Sistema 

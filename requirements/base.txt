@@ -1,5 +1,5 @@
 Django==1.9.5
-djangorestframework==3.6.3
+djangorestframework==3.9.1
 django-suit==0.2.25
 
 coreapi==2.3.1
